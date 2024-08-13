@@ -10,17 +10,8 @@ html,
 body {
   scroll-behavior: smooth;
 }
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.hamburger {
+  display: none;
 }
 .header .container {
   max-width: 1320px;
@@ -29,18 +20,15 @@ table {
 .header {
   position: sticky;
   top: 0;
-  width: 100vw;
   display: flex;
   justify-content: center;
-  padding: 20px 0px;
+  padding: 20px 30px;
   background: #fff;
   -webkit-box-shadow: 0px 4px 37px 5px rgba(34, 60, 80, 0.07);
   -moz-box-shadow: 0px 4px 37px 5px rgba(34, 60, 80, 0.07);
   box-shadow: 0px 4px 37px 5px rgba(34, 60, 80, 0.07);
 }
 .container {
-  max-width: 1140px;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,6 +45,7 @@ table {
   text-decoration: none;
   color: #000;
 }
+
 .btn {
   text-decoration: none;
   color: #f7941e;
@@ -118,7 +107,6 @@ table {
   justify-content: center;
 }
 .events .container {
-  display: flex;
   flex-direction: column;
 }
 .cards__item-img {
@@ -139,8 +127,9 @@ table {
   justify-content: space-between;
   display: flex;
   margin-top: 64px;
+  margin-right: 30px;
   width: 100%;
-  margin-bottom: 171px;
+  margin-bottom: 130px;
   flex-wrap: wrap;
 }
 .events .cards__item {
@@ -324,7 +313,30 @@ table {
 .icons {
   margin-bottom: 72px;
 }
+
+
 @media screen and (max-width: 992px) {
+
+  .double-block {
+    justify-content: center;
+  }
+  .double-block__left {
+    padding: 40px;
+    margin-bottom: 10px;
+  }
+  .double-block__right {
+    display: none;
+  }
+  .events__cards {
+    justify-content: center;
+    margin-bottom: 90px;
+  }
+  .cards__item {
+    margin: 0 30px 20px 30px;
+  }
+  .ctu-slogan {
+    margin-left: 20px;
+  }
   .blogs .cards-items {
     justify-content: center;
   }
@@ -334,10 +346,175 @@ table {
   .blogs .cards-items {
     margin-bottom: 0;
   }
-  .double-block__right {
+  
+}
+
+@media (max-width: 768px) {
+  .main__nav {
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 5;
+  }
+  .header {
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100vh;
+    padding: 20px 15px;
+    background-color: rgba(0,0, 0, .8);
+    transition: 0.6s all;
+  }
+  .header_active {
+    left: 0
+  }
+  .logo {
     display: none;
   }
-  .double-block {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
     justify-content: center;
+  }
+  .header__link {
+    display: inline-block;
+    padding-right: 0;
+    border: none;
+    font-size: 23px;
+    color: #fff;
+    margin-left: 30px;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 12px;
+  }
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #f7941e;;
+    margin-bottom: 4px;
+    transition: 0.5s all;  
+  }
+  .header__btn {
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  .title {
+    margin: 55px 0px 20px 0px;
+  }
+  .blogs .subtitle {
+    margin-bottom: 55px;
+  }
+  .ctu-btn {
+    flex-direction: column;
+    gap: 25px;
+    margin-right: 50px;
+  }
+  .double-block__left {
+    margin-top: 80px;
+  }
+  .double-block__title {
+    font-size: 40px;
+  }
+  .ctu-slogan {
+    margin: 50px auto;
+  }
+  .blog-text {
+    height: 300px;
+  }
+  .blog__img {
+    display: none;
+  }
+  .ctu-btn {
+    margin: 0 auto 20px;
+    gap: 0;
+    flex-direction: row;
+  }
+  .footer__nav {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .events {
+    display: block;
+  }
+  .events__cards {
+    margin-bottom: 40px;
+    margin-right: 0;
+  }
+  .blog__title {
+    font-size: 37px;
+  }
+  .blogs .cards__item-title {
+    width: 250px;
+    margin-bottom: 17px;
+    font-size: 18px;
+  }
+  .cards__item-text {
+    width: 270px;
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+  .footer__nav {
+    margin: 0 auto;
+  }
+  .footer__nav .line {
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .double-block__title {
+    font-size: 30px;
+  }
+  .double-block__text {
+    font-size: 16px;
+  }
+  .title {
+    font-size: 26px;
+    margin: 60px 0px 30px 0px;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
+  .ctu__btn--black {
+    padding: 17px 10px;
+    font-size: 15px;
+  }
+  .ctu__btn--black-border {
+    padding: 17px 10px;
+    font-size: 15px;
+  }
+  .btn {
+    font-size: 15px;
+  }
+  .blogs .cards__item {
+    padding: 0;
+  }
+  .footer__nav {
+    padding: 30px 0;
+  }
+  .icons-link {
+    margin: 0px 5px;
+  }
+  .icons {
+    margin-bottom: 28px;
   }
 }
